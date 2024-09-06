@@ -4,4 +4,8 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-fastembed = "=3.10.0"
+fastembed = "3.14.1"
+
+[patch.crates-io]
+ort = { path = "ort-2.0.0-rc.4" }
+ort-sys = { path = "ort-2.0.0-rc.4/ort-sys" }

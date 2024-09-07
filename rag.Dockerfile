@@ -42,8 +42,8 @@ ARG PG_VERSION
 
 RUN wget https://github.com/jawj/onnxtest/archive/refs/heads/main.tar.gz -O pg_neon_ai.tar.gz && \
     mkdir pg_neon_ai-src && cd pg_neon_ai-src && tar xzf ../pg_neon_ai.tar.gz --strip-components=1 -C . && \
-    wget 'https://huggingface.co/Xenova/bge-small-en-v1.5/resolve/main/onnx/model.onnx?download=true' -O bge_small_en_v15/model.onnx && \
-    wget 'https://huggingface.co/jinaai/jina-reranker-v1-tiny-en/resolve/main/onnx/model.onnx?download=true' -O jina_reranker_v1_tiny_en/model.onnx && \
+    cd bge_small_en_v15 && tar xzf model.onnx.tar.gz && cd .. && \
+    cd jina_reranker_v1_tiny_en && tar xzf model.onnx.tar.gz && cd .. && \
     ORT_LIB_LOCATION=/home/nonroot/onnxruntime-src/build/Linux cargo run && \
     sleep 10
 

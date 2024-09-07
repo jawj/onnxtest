@@ -45,5 +45,5 @@ RUN wget https://github.com/jawj/onnxtest/archive/refs/heads/main.tar.gz -O pg_n
     cd bge_small_en_v15 && tar xzf model.onnx.tar.gz && cd .. && \
     cd jina_reranker_v1_tiny_en && tar xzf model.onnx.tar.gz && cd .. && \
     ORT_LIB_LOCATION=/home/nonroot/onnxruntime-src/build/Linux cargo run && \
-    sleep 10
+    sleep 30
 
